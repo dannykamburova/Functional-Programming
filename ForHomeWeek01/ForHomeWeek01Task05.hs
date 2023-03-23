@@ -19,7 +19,7 @@ main = do
     print $ isLeapYearGuards 2100 == False
 
 isLeapYearOneLine :: Int -> Bool
-isLeapYearOneLine x = (mod x 400 == 0) || ((mod x 4 == 0) && (mod x 100 /= 0))
+isLeapYearOneLine x = mod x 400 == 0 || mod x 4 == 0 && mod x 100 /= 0
 
 isLeapYearGuards :: Int -> Bool
 isLeapYearGuards x
