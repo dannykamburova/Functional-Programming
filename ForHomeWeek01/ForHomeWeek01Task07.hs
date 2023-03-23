@@ -6,6 +6,9 @@ main = do
     print $ growingPlant 100 10 910 == 10
 
 growingPlant :: Int -> Int -> Int -> Int
-growingPlant x y z 
- | 0 + x - y >= z = 1
- | otherwise = growingplant x y 
+growingPlant upSpeed downSpeed desiredHeight = helper upSpeed downSpeed desiredHeight 1
+    where
+        helper :: Int -> Int -> Int -> Int -> Int
+        helper upSpeed downSpeed 0 result = result
+        helper upSpeed downSpeed leftover result = helper upSpeed downSpeed (desiredHeight - upSpeed + downSpeed) (result + 1)
+        
