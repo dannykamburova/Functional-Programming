@@ -15,4 +15,4 @@ isEvenIf x = if mod x 2 == 0 then "Yes" else "No"
 isEvenGuards :: Int -> [Char]
 isEvenGuards x
  | mod x 2 == 0 = "Yes"
- |otherwise = "No"
+ | otherwise = "No"
