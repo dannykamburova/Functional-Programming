@@ -8,9 +8,9 @@ main = do
     print $ canCarry 42 95.11 0.51 == "Yes"
     
 canCarry :: Int -> Double -> Double -> [Char]
-canCarry x y z
- | x < 0 = error "The number of products was negative"
- | y < 0 = error "John's hosting capacity was negative"
- | z < 0 = error "The weight of a product was negative"
- | (fromIntegral x) * z <= y = "Yes"
+canCarry c k w
+ | c < 0 = error "The number of products was negative"
+ | k < 0 = error "John's hosting capacity was negative"
+ | w < 0 = error "The weight of a product was negative"
+ | fromIntegral c * w <= k = "Yes"
  | otherwise = "No"
