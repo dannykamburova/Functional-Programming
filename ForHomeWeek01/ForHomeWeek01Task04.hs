@@ -16,4 +16,4 @@ myGcdPM :: Int -> Int -> Int
 myGcdPM x y = helper x y
     where
     helper x 0 = x
-    helper y (mod x y)
+    helper x y = helper y (mod x y)
