@@ -8,7 +8,16 @@ main = do
     print $ finalGrade 6 6 6 5.50 5.50 4 5 5.50 5       == 5.25
     print $ finalGrade 6 6 6 5.25 6 4 4 5.63 3.50       == 4.84
 
+roundTwoDig :: Double -> Double
+roundTwoDig = (/ 100) . fromIntegral . round . (* 100)
+
 finalGrade :: Double -> Double -> Double -> Double -> Double -> Double -> Double -> Double -> Double -> Double
 finalGrade d1 d2 d3 kz1 kz2 kt1 kt2 iz it
- | (fromIntegral $ round $ ((((((d1+d2+d3)/3)/4) + ((((kz1+kz2)/2)*3)/8) + (((kt1+kt2)/2)*3)/8) /2) + (iz/4) + (it/4)) * 100) / 100 < 2 = 2
- | otherwise = (fromIntegral $ round $ ((((((d1+d2+d3)/3)/4) + ((((kz1+kz2)/2)*3)/8) + (((kt1+kt2)/2)*3)/8) /2) + (iz/4) + (it/4)) * 100) / 100 
+ | o <= 2 = 2
+ | otherwise = roundTwoDig o
+ where
+    o = 1/2 * tk + 1/4 * it + 1/4 * iz
+    tk = 1/4 * d + 3/8 * kt + 3/8 * kz
+    d = (d1 + d2 + d3) / 3
+    kt = (kt1 + kt2) / 2
+    kz = (kz1 + kz2) / 2
