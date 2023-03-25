@@ -7,6 +7,7 @@ main = do
     print $ snail 5 10 3 == 1
 
 snail :: Int -> Int -> Int -> Int
-snail up down height 
- | up >= height = 1
- | otherwise = 1 + snail up down (height - up + down)
+snail height up down
+ | height <= 0 = 0
+ | height <= up = 1
+ | otherwise = 1 + snail (height - up + down) up down
