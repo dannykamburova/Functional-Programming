@@ -7,7 +7,7 @@ main = do
     print $ snail 5 10 3 == 1
 
 snail :: Int -> Int -> Int -> Int
-snail height up down
- | height <= 0 = 0
- | height <= up = 1
- | otherwise = 1 + snail (height - up + down) up down
+snail heightCol distDay distNight
+ | heightCol <= 0 = 0
+ | heightCol <= distDay = 1
+ | otherwise = 1 + snail (heightCol - distDay + distNight) distDay distNight
