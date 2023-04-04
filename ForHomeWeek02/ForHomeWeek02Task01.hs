@@ -11,10 +11,10 @@ main = do
 countDigitsIter :: Int -> Int
 countDigitsIter n 
  | n < 0 = error "x was negative"
- | otherwise = helper n
+ | otherwise = helper n 0
  where
-    helper 0 = 0
-    helper n = 1 + helper (div n 10)
+    helper 0 res = res
+    helper n res = helper (div n 10) (res + 1)
 
 
 countDigitsRec :: Int -> Int
