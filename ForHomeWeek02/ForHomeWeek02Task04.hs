@@ -9,5 +9,5 @@ countOccurences :: Int -> Int -> Int
 countOccurences 0 0 = 1
 countOccurences 0 _ = 0
 countOccurences n k
- | k == (mod n 10) = 1 + countOccurences (div n 10) k
+ | k == mod n 10 = 1 + countOccurences (div n 10) k
  | otherwise = countOccurences (div n 10) k
