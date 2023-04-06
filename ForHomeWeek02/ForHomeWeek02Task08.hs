@@ -16,7 +16,7 @@ removeD d n = helper n 0
     helper n res
      | n == 0 = res
      | d == mod n 10 = helper (div n 10) res
-     | otherwise = rev (helper (div n 10) (10*res + mod n 10))
+     | otherwise = rev (helper (div n 10) (10 * res + mod n 10))
 
 rev :: Int -> Int
 rev n = helper n 0
