@@ -8,4 +8,4 @@ sumDigitsIter :: Int -> Int
 sumDigitsIter n = helper n 0
   where
     helper 0 res = res
-    helper n res = helper (n `div` 10) (res + n `mod` 10)
+    helper n res = helper (div n 10) (res + mod n 10)
