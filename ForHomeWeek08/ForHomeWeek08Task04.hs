@@ -19,11 +19,3 @@ area (Rectangle x y) = x*y
 area (Triangle x y z) = sqrt (s*(s - x)*(s - y)*(s - z))
  where s = (x + y + z) / 2
 area (Cylinder r h) = 2*pi*r*h + 2*pi*r*r
-
--- print $ simplify "1+2+x" == "x+3"
-    --print $ simplify "x+2+x-2" == "2x"
-    --print $ simplify "x+2-(x-2)" == "4"
-    --print $ simplify "y+2+x-2" == "x+y"
-    --print $ simplify "1+2+x+y+x+z+5-x-x-x+y" == "-x+2y+z+8"
-    --print $ simplify "1+2+x+y+x-(x-x-x)+z+y-10" == "3x+2y+z-7"
-   -- print $ simplify "1+2-(3-(3-2))-10" == "-9"
